@@ -1,0 +1,201 @@
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px 5px;
+
+    @media only screen and (min-width: 768px){
+        flex-direction: row;
+    }
+
+    .header__options {
+        display: flex;
+        align-items: start;
+        flex-direction: row;
+        margin: 0.5em 0 0 0;
+
+        @media only screen and (min-width: 576px){
+            margin: 0.5em 0 0 0;
+            align-items: center;
+        }
+
+        @media only screen and (min-width: 768px){
+            margin: 0;
+        }
+    }
+
+    .header__option {
+        display: flex;
+        width: 48%;
+        margin-top: 0.25em;
+        margin-bottom: 0.25em;
+
+        @media only screen and (min-width: 576px){
+            margin: 0.5em 0;
+            align-items: center;
+            width: auto;
+        }
+
+        @media only screen and (min-width: 768px){
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        &.header__filter {
+            width: inherit;
+        }
+    }
+
+    .header__sort {
+        margin-right: 2%;
+
+        @media only screen and (min-width: 576px){
+            margin-right: 1em;
+        }
+    }
+
+    .header__order {
+        margin-right: 2%;
+
+        @media only screen and (min-width: 576px){
+            margin-right: 0;
+        }
+    }
+
+    .header__button {
+        background: var(--background-color);
+        border: 1px solid var(--color-border);
+        border-radius: 5px;
+        padding: 8px 0;
+        width: 45px;
+
+        svg {
+            fill: var(--secondary);
+
+            &.header__button--filter {
+                height: 1.25em;
+            }
+
+            &.header__button--close {
+                height: 1.25em;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:active {
+            background: var(--color-active);
+        }
+    }
+
+    .header__option-label, .header__option-selected {
+        display: flex;
+        align-items: center;
+        margin: 0 0.5em 0 0;
+    }
+
+    .header__option-label {
+        display: none;
+        font-weight: 600;
+
+        @media only screen and (min-width: 576px){
+            display: block;
+        }
+    }
+
+    .header__option-wrapper {
+        position: relative;
+        width: 100%;
+
+        @media only screen and (min-width: 576px){
+            width: auto;
+        }
+    }
+
+    .header__option-selected {
+        width: 100%;
+        padding: 0.5em 0.75em 0.5em 1.5em;
+        border: 1px solid var(--color-border);
+        border-radius: 5px;
+
+        svg {
+            fill: var(--secondary);
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        @media only screen and (min-width: 576px){
+            width: 175px;
+        }
+    }
+
+    .header__option-selected-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .header__option-list {
+        position: absolute;
+        top: 35px;
+        left: 0;
+        background: var(--background-color);
+        border: 1px solid var(--color-border);
+        border-radius: 5px;
+        z-index: 100;
+
+        ul {
+            width: 175px;
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            padding: 0.5em 0 0.5em 1.5em;
+            
+            &:hover {
+                background: var(--secondary);
+                color: var(--primary);
+                cursor: pointer;
+            }
+        }
+    }
+
+    .header__option-list--checkbox {
+        top: 37px;
+        right: 0;
+        left: auto;
+        padding: 0.25em 0;
+
+        li {
+            display: flex;
+            user-select: none;
+
+            &:before {
+                position: relative;
+                top: 0px;
+                display: block;
+                content: '';
+                height: 18px;
+                width: 18px;
+                margin: 0 0.5em 0 0;
+                border: 1px solid #fff;
+            }
+
+            &:hover {
+                color: var(--secondary);
+                background: initial;
+            }
+
+            &.header__option--toggled {
+                &:before {
+                    background: #fff;
+                }
+            }
+        }
+    }
+}

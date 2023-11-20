@@ -1,0 +1,52 @@
+.image {
+    .image__viewer {
+        display: flex;
+        justify-content: center;
+        width: auto;
+    }
+
+    .image__control {
+        display: flex;
+        align-items: center;
+        padding: 0 1em;
+
+
+        &:hover {
+            cursor: pointer;
+
+            svg {
+                fill: var(--color-hover);
+            }
+        }
+
+        svg {
+            fill: var(--secondary);
+            height: 3em;
+            user-select: none;
+            transition: 0.33s all;
+        }
+
+        &--disable {
+            pointer-events: none;
+
+            svg {
+                fill: var(--primary);
+            }
+        }
+    }
+
+    .image__wrapper {
+        height: 90vh;
+
+        img {
+            height: 100%;
+            width: auto;
+            user-select: none;
+        }
+    }
+
+    .image__description {
+        display: flex;
+        justify-content: space-between;
+    }
+}

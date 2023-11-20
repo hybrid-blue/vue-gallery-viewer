@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap');
+
+:root {
+  --primary: #222;
+  --secondary: #fff;
+  --ternary: color-mix(in srgb, var(--primary) 75%, var(--secondary));
+
+
+  --background-color: var(--primary);
+  --color-text: var(--secondary);
+  --color-hover: var(--ternary);
+  --color-active: var(--ternary);
+  --color-focus: var(--ternary);
+  --color-border: var(--secondary);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+
+::-moz-selection { /* Code for Firefox */
+  color: var(--primary);
+  background: var(--secondary);
+}
+
+::selection {
+  color: var(--primary);
+  background: var(--secondary);
+}
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--background-color);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Roboto', sans-serif;
+}
